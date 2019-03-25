@@ -9,8 +9,14 @@
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage",
     "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
-  }
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.15.3",
+    "jest": "^24.5.0",
+    "jsdoc": "^3.5.5",
+    "lint": "^1.1.2"
+  }
 }
