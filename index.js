@@ -59,6 +59,11 @@ const transformGreyscale = (bmp) => {
   }
 };
 
+/**
+ * Bitmap Transformer (inversion)
+ * Would be called by Bitmap.transform('invert')
+ * @param bmp
+ */
 const doTheInversion = (bmp) => {
   for(let i = bmp.PIXEL_MAP_OFFSET - 1; i>bmp.COLOR_PALLET_OFFSET; i-=4){
     bmp.colorPallet[i-3] = 255 - bmp.colorPallet[i-3];
@@ -67,6 +72,11 @@ const doTheInversion = (bmp) => {
   }
 };
 
+/**
+ * Bitmap Transformer (robberMask)
+ * Would be called by Bitmap.transform('mask')
+ * @param bmp
+ */
 const robberMask = (bmp) => {
   for(let i = 6628; i<8716; i++){
     if(bmp.pixelMap[i] === 244){
@@ -75,6 +85,11 @@ const robberMask = (bmp) => {
   }
 };
 
+/**
+ * Bitmap Transformer (technicolor)
+ * Would be called by Bitmap.transform('technicolor')
+ * @param bmp
+ */
 const technicolor = (bmp) => {
   for(let i = bmp.COLOR_PALLET_OFFSET; i<bmp.PIXEL_MAP_OFFSET; i+=4){
     bmp.buffer[i] = Math.floor(Math.random()*(255-0)+0);
@@ -96,6 +111,10 @@ const transforms = {
 
 // ------------------ GET TO WORK ------------------- //
 
+/**
+ * Bitmap Transformer with Callbacks
+ * Uses CLI input to execute parse and transform methods on bitmap buffer
+ */
 function transformWithCallbacks() {
 
   fs.readFile(file, (err, buffer) => {
@@ -105,10 +124,8 @@ function transformWithCallbacks() {
     }
 
     bitmap.parse(buffer);
-
     bitmap.transform(operation);
 
-    // Note that this has to be nested!
     // Also, it uses the bitmap's instance properties for the name and thew new buffer
     fs.writeFile(bitmap.newFile, bitmap.buffer, (err, out) => {
       if (err) {
