@@ -14,6 +14,7 @@ This lab utilizes buffer and bitmap methods to manipulate an existing .bmp image
 - baldy.bmp
 
 # Setup
+N/A
 
 ## Running the app
 - index.js can be initialized from the CLI
