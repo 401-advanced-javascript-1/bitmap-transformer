@@ -8,9 +8,11 @@ This lab utilizes buffer and bitmap methods to manipulate an existing .bmp image
 - [Travis](https://www.travis-ci.com/401-advanced-javascript-1/bitmap-transformer)
 
 ## Documentation
+- [jsdocs]()
+
 
 # Modules
-- index.html
+- index.js
 - baldy.bmp
 
 # Setup
@@ -20,6 +22,7 @@ N/A
 - index.js can be initialized from the CLI
 - Type index.js (filepath for bmp image) (method to be performed) to run the application.  This willl alter the .bmp file with the desired method.
 - This application has (4) methods - greyscale, invert, mask, and technicolor. Each method transforms the input bmp image in various ways and writes a new file with the saved changes.
+- 
 
 ## Tests
 
